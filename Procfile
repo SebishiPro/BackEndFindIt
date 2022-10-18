@@ -1,1 +1,3 @@
-web: gunicorn FindIt.wsgi --log-file -
+web: gunicorn FindIt.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
