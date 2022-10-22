@@ -76,7 +76,7 @@ def lugaresABC(request,id=0):
             else:
                 return JsonResponse("No hay ningun lugar con ese id", safe=False)
         elif(id==0):
-            informacion = Usuarios.objects.all()
+            informacion = Lugares.objects.all()
             serializer = LugaresSerializer(informacion, many =True)
             return JsonResponse(serializer.data, safe=False)
     elif request.method=='PUT':#AQUI SE PUEDE MODIFICAR ALGUN USUARIO POR MEDIO DE SU ID
