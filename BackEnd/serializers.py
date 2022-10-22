@@ -9,7 +9,7 @@ class UsuariosSerializer(serializers.ModelSerializer):
 class LugaresSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lugares
-        fields = ('LugarId','LugarName','CategoriaId','Coordenadas','CiudadId','CodigoPostal','Horario','LugarStatus','Servicios','UrlImagen','Likes','Dislikes')
+        fields = ('LugarId','LugarName','CategoriaId','Coordenadas','Ciudad','CodigoPostal','Horario','LugarStatus','Servicios','UrlImagen','Likes','Dislikes')
 
 class CategoriasSerializer(serializers.ModelSerializer):
     class Meta:
