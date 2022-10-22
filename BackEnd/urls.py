@@ -3,8 +3,8 @@ from BackEnd import views
 
 urlpatterns = [
     path("usuarios", views.usuariosABC, name="usuariosABC"),
+    path('lugares', views.lugaresABC, name='lugaresABC'),
     path('usuarios/<int:id>', views.usuariosABC, name='usuariosABC'),
-    path("lugares", views.lugaresABC, name="lugaresABC"),
     path('lugares/<int:id>', views.lugaresABC, name='lugaresABC'),
     path('lugares/<str:ciudad>', views.lugaresFiltro, name='lugaresFiltro'),
     path('usuarios/<int:id>/historial', views.historialUsuario, name='historial'),

@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 ########################################################################################################################################
-@csrf_exempt #AQUI VAN ESTAR LAS API PARA USUARIOS
+@csrf_exempt #AQUI VAN ESTAR LAS FUNCIONES PARA USUARIOS
 def usuariosABC(request,id=0):
     if request.method=='POST':#AQUI SE INTRODUCEN LOS NUEVOS USUARIOS 
         informacion = JSONParser().parse(request)
@@ -59,7 +59,7 @@ def historialUsuario(request,id=0):
 ##########################################################################################################
 
 
-@csrf_exempt #AQUI VAN ESTAR LAS API PARA LUGARES
+@csrf_exempt #AQUI VAN ESTAR LAS FUNCIONES PARA LUGARES
 def lugaresABC(request, id=0):
     if request.method=='POST':#AQUI SE INTRODUCEN LOS NUEVOS LUGARES 
         informacion = JSONParser().parse(request)
@@ -101,7 +101,7 @@ def lugaresFiltro(request,ciudad=''):
 ##########################################################################################################
 
 
-@csrf_exempt #API PARA LOS COMENTARIOS
+@csrf_exempt #FUNCIONES PARA LOS COMENTARIOS
 def comentarios(request,id=0):
     if request.method=='POST':#AQUI SE INTRODUCIRAN COMENTARIOS
         informacion = JSONParser().parse(request)
@@ -116,7 +116,7 @@ def comentarios(request,id=0):
 ##########################################################################################################
 ##########################################################################################################
 
-@csrf_exempt
+@csrf_exempt #FUNCIONES PARA FOTOS PUBLICADAS
 def publicarFoto(request,id):
     if request.method=='POST':#AQUI SE INTRODUCIRAN COMENTARIOS
         informacion = JSONParser().parse(request)
