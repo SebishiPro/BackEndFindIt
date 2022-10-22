@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 ########################################################################################################################################
-@csrf_exempt #AQUI VAN ESTAR LAS FUNCIONES PARA USUARIOS
+@csrf_exempt #AQUI VAN ESTAR LAS FUNCIONE PARA USUARIOS
 def usuariosABC(request,id=0):
     if request.method=='POST':#AQUI SE INTRODUCEN LOS NUEVOS USUARIOS 
         informacion = JSONParser().parse(request)
@@ -116,7 +116,7 @@ def comentarios(request,id=0):
 ##########################################################################################################
 ##########################################################################################################
 
-@csrf_exempt #FUNCIONES PARA FOTOS PUBLICADAS
+@csrf_exempt #FUNCIONES PARA FOTOS
 def publicarFoto(request,id):
     if request.method=='POST':#AQUI SE INTRODUCIRAN COMENTARIOS
         informacion = JSONParser().parse(request)
