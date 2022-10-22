@@ -61,14 +61,14 @@ def historialUsuario(request,id=0):
 
 @csrf_exempt #AQUI VAN ESTAR LAS FUNCIONES PARA LUGARES
 def lugaresABC(request,id=0):
-    if request.method=='POST':#AQUI SE INTRODUCEN LOS NUEVOS USUARIOS 
+    if request.method=='POST':#AQUI SE INTRODUCEN LOS NUEVOS LUGARES 
         informacion = JSONParser().parse(request)
         serializer = LugaresSerializer(data=informacion)
         if serializer.is_valid():
             serializer.save() #EL ID ESTA EN AUTOMATICO POR LO QUE NO ES NECESARIO PROPORCIONAR ALGUNO
             return JsonResponse("Added Succesfully!!", safe=False)
         return JsonResponse("Failed to Add", safe=False)
-    elif request.method=='GET':#AQUI SE OBTIENEN LOS USUARIOS REGRISTRADOS EN LA BASE DE DATOS, PUEDE SER POR ID O TODOS EN GENERAL DANDOLE VALOR DE 0 AL ID
+    elif request.method=='GET':#AQUI SE OBTIENEN LOS LUGARES REGRISTRADOS EN LA BASE DE DATOS, PUEDE SER POR ID O TODOS EN GENERAL DANDOLE VALOR DE 0 AL ID
         if(id>0):
             informacion=list(Lugares.objects.filter(LugarId=id).values())
             if len(informacion)>0:
@@ -79,7 +79,7 @@ def lugaresABC(request,id=0):
             informacion = Lugares.objects.all()
             serializer = LugaresSerializer(informacion, many =True)
             return JsonResponse(serializer.data, safe=False)
-    elif request.method=='PUT':#AQUI SE PUEDE MODIFICAR ALGUN USUARIO POR MEDIO DE SU ID
+    elif request.method=='PUT':#AQUI SE PUEDE MODIFICAR ALGUN LUGAR POR MEDIO DE SU ID
         informacion_id = JSONParser().parse(request)
         informacion=Lugares.objects.get(LugarId=informacion_id['LugarId'])
         serializer=LugaresSerializer(informacion, data = informacion_id)
@@ -87,7 +87,7 @@ def lugaresABC(request,id=0):
             serializer.save()
             return JsonResponse("Update Succesfully!!", safe=False)
         return JsonResponse("Failed to Update", safe=False)
-    elif request.method=='DELETE':#AQUI SE ELIMINARAN LOS USUARIOS QUE ESTEN EN LA BASE DE DATOS POR MEDIO DE SU ID
+    elif request.method=='DELETE':#AQUI SE ELIMINARAN LOS LUGARES QUE ESTEN EN LA BASE DE DATOS POR MEDIO DE SU ID
         informacion_id=JSONParser().parse(request)
         informacion=Lugares.objects.get(LugarId=informacion_id['LugarId'])
         informacion.delete()
