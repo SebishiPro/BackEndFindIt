@@ -16,7 +16,7 @@ class Lugares(models.Model):
     LugarName = models.CharField(max_length = 100)
     CategoriaId = models.CharField(max_length = 100)
     Coordenadas = models.CharField(max_length=100)
-    CiudadId = models.CharField(max_length = 100)
+    Ciudad = models.CharField(max_length = 100)
     CodigoPostal = models.CharField(max_length = 100)
     Horario = models.CharField(max_length = 100)
     LugarStatus = models.CharField(max_length = 100)
