@@ -60,7 +60,7 @@ def historialUsuario(request,id=0):
 
 
 @csrf_exempt #AQUI VAN ESTAR LAS FUNCIONES PARA LUGARES
-def usuariosABC(request,id=0):
+def lugaresABC(request,id=0):
     if request.method=='POST':#AQUI SE INTRODUCEN LOS NUEVOS USUARIOS 
         informacion = JSONParser().parse(request)
         serializer = LugaresSerializer(data=informacion)
