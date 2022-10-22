@@ -74,7 +74,7 @@ def lugaresABC(request,id=0):
             if len(informacion)>0:
                 return JsonResponse(informacion, safe=False)
             else:
-                return JsonResponse("No hay ningun usuario con ese id", safe=False)
+                return JsonResponse("No hay ningun lugar con ese id", safe=False)
         elif(id==0):
             informacion = Usuarios.objects.all()
             serializer = LugaresSerializer(informacion, many =True)
