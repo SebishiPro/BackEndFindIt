@@ -1,7 +1,7 @@
 asgiref==3.5.2
 cffi==1.15.1
 cryptography==38.0.3
-Django==4.1.2
+Django==43.2.16
 django-cors-headers==3.13.0
 djangorestframework==3.14.0
 gunicorn==20.1.0
